@@ -38,6 +38,6 @@ current prediction. (lines 118-123 in MPC.cpp)
 Waypoints are first transformed into vehicle's coordinate system. A polynomial is fitted to transfromed waypoints. This simplifies
 the process of calculating cross track and error and psi error, as vehicle will be at origin (0,0) with an orientation of 0. 
 
-Handle control latency
+## Handle control latency
 As mentioned earlier, dt is choosen to be 0.1s to account for the latency of the controller, so the previous control input can be used for the 
 current prediction. (lines 118-123 in MPC.cpp)
