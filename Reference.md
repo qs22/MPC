@@ -1,11 +1,15 @@
 ## MPC model
 Kinematic model is adopted in this project where the following six states and two actuactors are used:
-### State
+1) State
+
 Vehicle's position (x, y) coordinates, orientation angle (psi), velocity (v), cross track error (cte) and psi error (epsi).
-### Actuators
+
+2) Actuators
+
 Steering angle (delta) and acceleration (a)
 
-### Update equations 
+3) Update equations 
+
 x_[t+1] = x[t] + v[t] * cos(psi[t]) * dt
 
 y_[t+1] = y[t] + v[t] * sin(psi[t]) * dt
