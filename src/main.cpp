@@ -129,12 +129,20 @@ int main() {
           // the points in the simulator are connected by a Green line
 
           // starting for index 2 in result, 0 and 1 are steer angle and throttle value, respectively
-          int num_points = (result.size() - 2 ) / 2;
-          for (int i = 2; i < num_points + 2; i++)
+  
+          for (size_t i = 2; i < result.size() - 1; i = i + 2)
           {
             mpc_x_vals.push_back(result[i]);
-            mpc_y_vals.push_back(result[i + num_points]);
+            mpc_y_vals.push_back(result[i + 1]);
           }
+          /*for (size_t i = 2; i < result.size(); i++) {
+            if (i%2 == 0) {
+              mpc_x_vals.push_back(result[i]);
+            }
+            else {
+              mpc_y_vals.push_back(result[i]);
+            }
+          }*/
           msgJson["mpc_x"] = mpc_x_vals;
           msgJson["mpc_y"] = mpc_y_vals;
 
